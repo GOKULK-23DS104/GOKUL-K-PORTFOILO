@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Gokul K</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: url('bg.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(51, 51, 51, 0.9);
+            padding: 10px;
+            border-radius: 30px;
+            margin: 20px;
+        }
+        nav a {
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: rgba(87, 87, 87, 0.9);
+            border-radius: 10px;
+            transform: scale(1.1);
+        }
+        section {
+            padding: 40px;
+            margin: 40px;
+            border: 3px solid #444;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            background: white;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+            color: #222;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 -8px 15px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-family: 'Georgia', serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #111;
+            text-shadow: 2px 2px 10px #aaa;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        h2:hover {
+            color: #444;
+            transform: scale(1.1);
+        }
+        p {
+            font-weight: bold;
+            color: #444;
+            line-height: 1.8;
+        }
+        .resume-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .resume-button img {
+            width: 200px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+        .resume-button img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gokul K</h1>
+    <p>B.Sc. Computer Science with Data Science</p>
+    <p>WELCOME TO MY Portfolio</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>Highly motivated and detail-oriented undergraduate student pursuing a <strong>B.Sc. in Computer Science with Data Science</strong>. 
+       Currently in the second year, equipped with a strong foundation in programming, data analysis, and problem-solving. 
+       Passionate about exploring innovative solutions in technology and advancing skills in machine learning and big data.</p>
+</section>
+
+<section id="education" class="fade">
+    <h2>Education</h2>
+    <p><strong>D.R.B.C.C.C Hindu College</strong></p>
+    <p>B.Sc. Computer Science with Data Science (2023-2026)</p>
+</section>
+
+<section id="skills" class="fade">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Data Structures</li>
+        <li>Excel (Intermediate)</li>
+        <li>Data Analytics (Certified on LinkedIn)</li>
+    </ul>
+</section>
+
+<section id="resume" class="resume-button">
+    <a href="resume.webp" target="_blank">
+        <img src="resume.webp" alt="Resume">
+    </a>
+</section>
+
+<section id="contact" class="fade">
+    <h2>Contact Me</h2>
+    <ul>
+        <li>📞 <strong>6385284022</strong></li>
+        <li>📧 <a href="mailto:gokulk237@gmail.com"><strong>gokulk237@gmail.com</strong></a></li>
+        <li>📍 <strong>18/42 West Oppankara Street</strong></li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 Gokul K | All Rights Reserved</p>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll('section');
+
+    const showSections = () => {
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', showSections);
+    showSections();
+</script>
+
+</body>
+</html>
